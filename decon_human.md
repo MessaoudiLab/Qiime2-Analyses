@@ -52,5 +52,5 @@
 **Qiime2 is microbiome bioinformatics platform:**
 ```module load qiime2/2017.8``` 
 
-**Coding language module**  
+**Coding language module:**  
 ```module load perl```
