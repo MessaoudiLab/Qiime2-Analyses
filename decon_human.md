@@ -1,5 +1,24 @@
 # **Required Modules:**  
-```module load trimmomatic/0.36 --module load BBMap/38.16 --module load bowtie2/2.2.9 --module load metabat/0.32.4 --module load SPAdes --module load bwa/0.7.17 --module load samtools/1.9```   
+**Trimmomatic: A flexible read trimming tool for Illumina NGS data:**
+```module load trimmomatic/0.36```
+
+**BBMap is a splice-aware global aligner for DNA and RNA sequencing reads:**
+```module load BBMap/38.16```
+
+**Bowtie2 is a short read aligner:**
+```module load bowtie2/2.2.9```
+
+**MetaBAT is a robust statistical framework for reconstructing genomes from metagenomic data:**
+```module load metabat/0.32.4```
+
+**SPAdes is a genome assembly algorithm:**
+```module load SPAdes```
+
+**Burrows-Wheeler Sequence aligner:**
+```module load bwa/0.7.17```
+
+**Samtools is a suite of programs for interacting with high-throughput sequencing data:**
+```module load samtools/1.9```  
 
 # **Trim raw illumina read, removing any adapters or low quality bases:**  
 ```java -jar /rhome/rhoadesn/Scripts/trimmomatic-0.36.jar PE -threads 48 -phred33 ${ID}_R1.fq.gz ${ID}_R2.fq.gz ./trimmed/${ID}_paired_trim_R1.fastq.gz ./trimmed/${ID}_unpaired_trim_R1.fastq.gz ./trimmed/${ID}_paired_trim_R2.fastq.gz ./trimmed/${ID}_unpaired_trim_R2.fastq.gz ILLUMINACLIP:/rhome/rhoadesn/Scripts/NexteraPE-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36```
@@ -13,5 +32,25 @@
 # **Concatanate the QC and decontaminated sequence files**
 ```cat ./decon/${ID}.paired.decon.fastq.1.gz ./decon/${ID}.paired.decon.fastq.2.gz ./decon/${ID}.paired.decon.fastq.2.gz >> ./concat/${ID}_concat.fastq.gz```
 
-# **Run humann2**
-```module load metaphlan2 --module load bowtie2 --module load diamond --module load minpath --module unload python --module load qiime2/2017.8 --module load perl```
+# **Run humann2:**
+
+**Metagenomic Phylogenetic Analysis:**
+```module load metaphlan2``` 
+
+**Shortread aligner:**
+```module load bowtie2```
+
+**DIAMOND is a sequence aligner for protein and translated DNA searches:**
+```module load diamond```
+
+**MinPath (Minimal set of Pathways) is a parsimony approach for biological pathway reconstructions using protein family predictions:**
+```module load minpath```
+
+**Coding module:**
+```module unload python``` 
+
+**Qiime2 is microbiome bioinformatics platform:**
+```module load qiime2/2017.8``` 
+
+**Coding language module**  
+```module load perl```
