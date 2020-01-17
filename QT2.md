@@ -1,4 +1,4 @@
-# **Genome Assembly**
+# ***Genome Assembly***
 
 # **Required Modules**
 
